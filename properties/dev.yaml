@@ -1,0 +1,14 @@
+# DEV
+
+# App
+serverPort: 9900
+
+# MongoDB
+mongodb:
+  hosts:
+    - localhost:27017
+  username: go_math_api
+  password: go_math_api
+  database: admin
+  timeout: 500
+  poolLimit: 128
