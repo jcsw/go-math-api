@@ -45,6 +45,15 @@ func TestPostCustomerHandler(t *testing.T) {
 			expectedBody:       `{"error":"invalid value 'parameters'"}`,
 		},
 		{
+			description:        "should return error 405 when method is not 'POST'",
+			repositoryMock:     mockPersistOperationLogSuccesfull(),
+			method:             "PUT",
+			url:                "/math/operation",
+			payload:            []byte(`{"operation":"SUM, "parameters":[1, 1]}`),
+			expectedStatusCode: 405,
+			expectedBody:       `{"error":"invalid method"}`,
+		},
+		{
 			description:        "should return 200 when successful",
 			repositoryMock:     mockPersistOperationLogSuccesfull(),
 			method:             "POST",

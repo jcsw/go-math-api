@@ -1,6 +1,7 @@
 # Go Math API
 
 ### Math API writen in Golang ###
+#### Modeling based on 'clean architecture' ####
 
 Required
 ```
