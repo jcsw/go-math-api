@@ -37,7 +37,7 @@ python3 -m pip install locustio
 
 To Run
 ```
-locust -f stress-test/math-api-stress-test.py --host=http://localhost:9900
+locust -f stress-test/math-api-stress-test.py --host=http://localhost:9900 --csv=stress-test/report/math-api
 ```
 
 To access web ui
@@ -47,7 +47,7 @@ http://localhost:8089/
 
 To Run without the web UI
 ```
-locust -f stress-test/math-api-stress-test.py --host=http://localhost:9900 --no-web -c 1000 -r 10
+locust -f stress-test/math-api-stress-test.py --host=http://localhost:9900 --no-web -c 100 -r 10 --csv=stress-test/report/math-api
 ```
 
 Locust Documentation
