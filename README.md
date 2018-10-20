@@ -23,5 +23,34 @@ docker-compose up
 
 Run
 ```
+make run-deps
 make run
+```
+
+### Stress testing with Locust ###
+
+To install with Ubuntu
+```
+sudo apt-get install python3 python3-pip
+python3 -m pip install locustio
+```
+
+To Run
+```
+locust -f stress-test/math-api-stress-test.py --host=http://localhost:9900
+```
+
+To access web ui
+```
+http://localhost:8089/
+```
+
+To Run without the web UI
+```
+locust -f stress-test/math-api-stress-test.py --host=http://localhost:9900 --no-web -c 1000 -r 10
+```
+
+Locust Documentation
+```
+https://docs.locust.io/en/latest/what-is-locust.html
 ```

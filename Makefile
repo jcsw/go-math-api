@@ -40,6 +40,13 @@ clean:
 	rm -f $(BUILD_DIRECTORY)/*
 run:
 	$(GO_RUN) $(APP_INIT) -env=dev
+
+run-deps:
+	docker-compose --file docker/mongodb/docker-compose.yml up -d
+
+stop-deps:
+	docker-compose --file docker/mongodb/docker-compose.yml stop
+
 deps:
 	$(GO_GET) golang.org/x/tools/cmd/cover
 	$(GO_GET) github.com/golang/lint/golint
